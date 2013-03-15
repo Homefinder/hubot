@@ -16,18 +16,18 @@ class Mcr
 
   constructor: (@robot) ->
     @cache = {}
+    if @robot.brain.data.taps
+      @cache = @robot.brain.data.taps
     
   set_tap: (tap_side, beer) ->
     @cache[tap_side] = beer
     @robot.brain.data.taps = @cache
     
-  clear_tap: (tap_side) ->
-    @cache[tap_side] = "Nothing"
-    @robot.brain.data.taps = @cache
-  
   get_tap: ->
     response = ""
-    if @cache
+    if !@cache || (!@cache['left'] && !@cache['right'])
+      response = "I don't know, go check the kegs."
+    else
       if @cache['left']
         response = "\r\n" + @cache['left'] + " is pouring from the LEFT tap."
       if @cache['right']
@@ -43,11 +43,8 @@ module.exports = (robot) ->
     mcr.set_tap(msg.match[2].trim(), msg.match[1].trim())
     msg.send msg.random tap_responses
   robot.respond /empty (left|right) tap/i, (msg) ->
-    mcr.clear_tap(msg.match[1].trim())
+    mcr.set_tap(msg.match[1].trim(), "Nothing")
     msg.send "Bummer."
   robot.respond /(what's|what is) on tap/i, (msg) ->
-    if !@robot.brain.data.taps
-      msg.send "I don't know, go check the kegs."
-    else
-      msg.send mcr.get_tap()
+    msg.send mcr.get_tap()
   
