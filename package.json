@@ -19,7 +19,9 @@
     "hubot": ">=2.4.6",
     "hubot-scripts": ">= 2.4.1",
     "optparse": "1.0.3",
-    "htmlparser": ">= 0.0.1"
+    "htmlparser": ">= 0.0.1",
+    "underscore": ">= 0.0.1",
+    "node-stringprep": ">= 0.0.1"
   },
 
   "engines": {
