@@ -53,3 +53,6 @@ module.exports = (robot) ->
     msg.send "http://divshot.github.io/geo-bootstrap/img/test/mchammer.gif"
   robot.hear /(hip)/i, (msg) ->
     msg.send "http://www.hipmunk.com/static/dancing-hipmunk.gif"
+  robot.hear /alert/i, (msg) ->
+    msg.send "http://divshot.github.io/geo-bootstrap/img/test/drudgesiren.gif"
+  
