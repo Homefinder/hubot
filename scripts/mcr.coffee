@@ -55,6 +55,3 @@ module.exports = (robot) ->
     msg.send "http://www.hipmunk.com/static/dancing-hipmunk.gif"
   robot.hear /alert/i, (msg) ->
     msg.send "http://divshot.github.io/geo-bootstrap/img/test/drudgesiren.gif"
-  robot.hear /thumbs up/i, (msg) ->
-    msg.send "http://blogdailyherald.com/wp-content/uploads/2013/05/3879-animated_gif-chuck_norris-dodgeball-thumbs_up.gif"
-  
