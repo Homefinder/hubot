@@ -45,6 +45,8 @@ module.exports = (robot) ->
   robot.respond /empty (left|right) tap/i, (msg) ->
     mcr.set_tap(msg.match[1].trim(), "Nothing")
     msg.send "Bummer."
+  robot.respond /(what's|what is) the mcr project status/i, (msg) ->
+    msg.send "https://circleci.com/gh/Homefinder/movingcompanyreviews.png?circle-token=e2e29dd76bdc457515900f908fedf63c646fe834"
   robot.respond /(what's|what is) on tap/i, (msg) ->
     msg.send mcr.get_tap()
   robot.hear /facepalm/i, (msg) ->
