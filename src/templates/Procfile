@@ -1,1 +1,1 @@
-app: bin/hubot -a gtalk -n rbot
+app: bin/hubot -a hipchat -n rbot
