@@ -108,6 +108,11 @@ module.exports = (robot) ->
         regex: /(it looks like you're|it looks like you) (.*)/i,
         generatorID: 20469,
         imageID: 1159769
+      },
+      {
+        regex: /(if you could just) (.*)/i,
+        generatorID: 60501,
+        imageID: 1431338
       }
     ]
 
