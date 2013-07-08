@@ -110,7 +110,7 @@ module.exports = (robot) ->
         imageID: 1159769
       },
       {
-        regex: /(if you could just) (.*)/i,
+        regex: /(.*) that would be great/i,
         generatorID: 60501,
         imageID: 1431338
       }
