@@ -4,9 +4,9 @@
 # Commands:
 #   hubot review report - Shows total MCR published reviews and happy moves
 
-GA = require('googleanalytics')
-util = require('util')
-require('date-utils');        
+# GA = require('googleanalytics')
+# util = require('util')
+# require('date-utils');        
 
 module.exports = (robot) ->
 	robot.respond /review report/i, (msg) ->
