@@ -31,47 +31,47 @@ module.exports = (robot) ->
   # Artsy Editorial
   #
   # Get Page stats from google analytics
-  robot.hear /stats (.*)http:\/\/movingcompanyreviews.com\/(.*)/i, (msg) ->
-    url = msg.match[0]
-    config = { "user": "dgehrett@homefinder.com", "password": "Charl1e0616" }
-
-    ga = new GA.GA(config);
-
-    ga.login (err, token) ->
-
-      start_date = Date.yesterday().toYMD("-")
-      end_date = Date.today().toYMD("-")
-
-      # support custom ranges
-      if url.indexOf("stats http") == -1
-        range = url.split(" http://movingcompanyreviews.com/")[0].split("stats ")[-1..][0].trim()
-
-        if range is "week"
-          start_date = Date.today().add({ weeks: -1 }).toYMD("-")
-
-        if range is "month"
-          start_date = Date.today().add({ months: -1 }).toYMD("-")
-
-        if range is "year"
-          start_date = Date.today().add({ years: -1 }).toYMD("-")
-
-
-      path = url.split("http://movingcompanyreviews.com")[-1..]
-
-      options = {
-          'ids': 'ga:67098210',
-          'start-date': start_date,
-          'end-date': end_date,
-          'filters': "ga:pagePath==#{path}",
-          'metrics': 'ga:visits, ga:pageviews',
-      }
-
-      # [{"metrics":[{"ga:visits":478,"ga:pageviews":688}],"dimensions":[{}]}]
-
-      ga.get(options, (err, entries) ->
-
-        visits = entries[0]["metrics"][0]["ga:visits"]
-        pageviews = entries[0]["metrics"][0]["ga:pageviews"]
-
-        msg.send "/#{path} recieved #{visits} visits and #{pageviews} pageviews."    
-      )
+  # robot.hear /stats (.*)http:\/\/movingcompanyreviews.com\/(.*)/i, (msg) ->
+  #   url = msg.match[0]
+  #   config = { "user": "dgehrett@homefinder.com", "password": "Charl1e0616" }
+  # 
+  #   ga = new GA.GA(config);
+  # 
+  #   ga.login (err, token) ->
+  # 
+  #     start_date = Date.yesterday().toYMD("-")
+  #     end_date = Date.today().toYMD("-")
+  # 
+  #     # support custom ranges
+  #     if url.indexOf("stats http") == -1
+  #       range = url.split(" http://movingcompanyreviews.com/")[0].split("stats ")[-1..][0].trim()
+  # 
+  #       if range is "week"
+  #         start_date = Date.today().add({ weeks: -1 }).toYMD("-")
+  # 
+  #       if range is "month"
+  #         start_date = Date.today().add({ months: -1 }).toYMD("-")
+  # 
+  #       if range is "year"
+  #         start_date = Date.today().add({ years: -1 }).toYMD("-")
+  # 
+  # 
+  #     path = url.split("http://movingcompanyreviews.com")[-1..]
+  # 
+  #     options = {
+  #         'ids': 'ga:67098210',
+  #         'start-date': start_date,
+  #         'end-date': end_date,
+  #         'filters': "ga:pagePath==#{path}",
+  #         'metrics': 'ga:visits, ga:pageviews',
+  #     }
+  # 
+  #     # [{"metrics":[{"ga:visits":478,"ga:pageviews":688}],"dimensions":[{}]}]
+  # 
+  #     ga.get(options, (err, entries) ->
+  # 
+  #       visits = entries[0]["metrics"][0]["ga:visits"]
+  #       pageviews = entries[0]["metrics"][0]["ga:pageviews"]
+  # 
+  #       msg.send "/#{path} recieved #{visits} visits and #{pageviews} pageviews."    
+  #     )
