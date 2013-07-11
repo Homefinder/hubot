@@ -15,6 +15,7 @@
     "url": "https://github.com/github/hubot.git"
   },
   "dependencies": {
+    "googleanalytics": "0.3.3",
     "hubot": ">=2.4.6",
     "hubot-scripts": ">= 2.4.1",
     "optparse": "1.0.3",
