@@ -32,7 +32,50 @@ module.exports = (robot) ->
       msg.send results_msg
 
 
+  robot.hear /give me traffic stats/i, (msg) ->
+    config = { "user": "dgehrett@homefinder.com", "password": "Charl1e0616" }
+  
+    ga = new GA.GA(config);
+  
+    ga.login (err, token) ->
+  
+      yesterday = Date.yesterday().toYMD("-")
+      options = {
+          'ids': 'ga:67098210',
+          'start-date': yesterday,
+          'end-date': yesterday,
+          'metrics': 'ga:visits, ga:pageviews',
+      }
+  
+      # [{"metrics":[{"ga:visits":478,"ga:pageviews":688}],"dimensions":[{}]}]
+  
+      ga.get(options, (err, entries) ->
+  
+        visits = entries[0]["metrics"][0]["ga:visits"]
+        pageviews = entries[0]["metrics"][0]["ga:pageviews"]
+  
+        msg.send "We got #{visits} visits and #{pageviews} pageviews on #{yesterday} \n"    
+      )
 
+      date = new Date();
+      firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+      options = {
+          'ids': 'ga:67098210',
+          'start-date': firstDay.toYMD("-"),
+          'end-date': Date.today().toYMD("-"),
+          'metrics': 'ga:visits, ga:pageviews',
+      }
+  
+      # [{"metrics":[{"ga:visits":478,"ga:pageviews":688}],"dimensions":[{}]}]
+  
+      ga.get(options, (err, entries) ->
+  
+        visits = entries[0]["metrics"][0]["ga:visits"]
+        pageviews = entries[0]["metrics"][0]["ga:pageviews"]
+  
+        msg.send "We got #{visits} visits and #{pageviews} pageviews so far this month. \n"    
+      )
+      
 
   # Get Page stats from google analytics
   robot.hear /stats (.*)http:\/\/movingcompanyreviews.com\/(.*)/i, (msg) ->
