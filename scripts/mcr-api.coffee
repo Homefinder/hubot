@@ -12,7 +12,7 @@ module.exports = (robot) ->
       msg.send "Here's the reviews I counted...\r\n#{rev_resp.published_review_count} Published Reviews\r\n#{rev_resp.happy_moves_count} Happy Moves :)"
 
   robot.respond /find movers near (.*)/i, (msg) ->
-    @robot.http("http://iron-serpent.herokuapp.com/api/v1/moving_companies/near_location?query=#{msg.match[1].replace(/[\s]/, "-")}")
+    @robot.http("http://iron-serpent.herokuapp.com/api/v1/near_location?query=#{msg.match[1].replace(/[\s]/, "-")}")
     .get() (err, res, body) ->
       locs = JSON.parse(body)
       results_msg = "Here's what I found near #{msg.match[1]}...\r\n"
