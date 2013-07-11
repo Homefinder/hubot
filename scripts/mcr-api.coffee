@@ -20,10 +20,13 @@ module.exports = (robot) ->
     .get() (err, res, body) ->
       locs = JSON.parse(body)
       results_msg = "Here's what I found near #{msg.match[1]}...\r\n"
-      i = 0
-      while i < locs.length
-        results_msg += "#{locs[i].company.company_name}: #{locs[i].company.profile_url}\r\n"
-        i++
+      if locs.length <= 0
+        results_msg = "I didnt' find any movers near #{msg.match[1]}"
+      else
+        i = 0
+        while i < locs.length
+          results_msg += "#{locs[i].company.company_name}: #{locs[i].company.profile_url}\r\n"
+          i++
         
       msg.send results_msg
 
