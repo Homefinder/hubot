@@ -49,9 +49,9 @@ module.exports = (robot) ->
     msg.send "https://circleci.com/gh/Homefinder/movingcompanyreviews.png?circle-token=e2e29dd76bdc457515900f908fedf63c646fe834"
   robot.respond /(what's|what is) on tap/i, (msg) ->
     msg.send mcr.get_tap()
-  robot.hear /facepalm/i, (msg) ->
-    msg.send "http://th06.deviantart.net/fs24/200H/i/2008/022/f/1/facepalm_gif_by_thatweirdo7.jpg"
-  robot.hear /hammer/i, (msg) ->
-    msg.send "http://divshot.github.io/geo-bootstrap/img/test/mchammer.gif"
-  robot.hear /alert/i, (msg) ->
-    msg.send "http://divshot.github.io/geo-bootstrap/img/test/drudgesiren.gif"
+  # robot.hear /facepalm/i, (msg) ->
+  #   msg.send "http://th06.deviantart.net/fs24/200H/i/2008/022/f/1/facepalm_gif_by_thatweirdo7.jpg"
+  # robot.hear /hammer/i, (msg) ->
+  #   msg.send "http://divshot.github.io/geo-bootstrap/img/test/mchammer.gif"
+  # robot.hear /alert/i, (msg) ->
+  #   msg.send "http://divshot.github.io/geo-bootstrap/img/test/drudgesiren.gif"
