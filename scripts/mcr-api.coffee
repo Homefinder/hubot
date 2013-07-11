@@ -3,6 +3,7 @@
 #
 # Commands:
 #   hubot review report - Shows total MCR published reviews and happy moves
+#   hubot find movers near <query> - Returns moving companies near the given location (zip code, city/state, address)
 
 GA = require('googleanalytics')
 util = require('util')
