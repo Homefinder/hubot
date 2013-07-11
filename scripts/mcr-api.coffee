@@ -1,3 +1,8 @@
+# Description:
+#   A way to interact with the MCR API.
+#
+# Commands:
+#   hubot review report - Shows total MCR published reviews and happy moves
 
 module.exports = (robot) ->
 	robot.respond /review report/i, (msg) ->
