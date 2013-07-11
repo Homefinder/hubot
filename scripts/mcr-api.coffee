@@ -3,7 +3,10 @@
 #
 # Commands:
 #   hubot review report - Shows total MCR published reviews and happy moves
+#   hubot show mover <mover name> - Returns all moving company locations matching <mover name>
 #   hubot find movers near <query> - Returns moving companies near the given location (zip code, city/state, address)
+#   hubot give me traffic stats - Returns visits and pagesview stats from Google Analytics for http://www.movingcompanyreviews.com for yesterday and month-to-date
+#   
 
 GA = require('googleanalytics')
 util = require('util')
@@ -15,6 +18,31 @@ module.exports = (robot) ->
     .get() (err, res, body) ->
       rev_resp = JSON.parse(body)
       msg.send "Here's the reviews I counted...\r\n#{rev_resp.published_review_count} Published Reviews\r\n#{rev_resp.happy_moves_count} Happy Moves :)"
+
+  robot.respond /show mover (.*)/i, (msg) ->
+    console.log "about to search for '#{msg.match[1]}'"
+
+    @robot.http("http://iron-serpent.herokuapp.com/api/v1/moving_companies/search?search=#{msg.match[1]}")
+    .get() (err, res, body) ->
+      movers = JSON.parse(body)
+      results_msg = "Here's what I found #{msg.match[1]}...\r\n"
+      if movers.length <= 0
+        results_msg = "I couldn't match any movers to '#{msg.match[1]}'"
+      else
+        i = 0
+        while i < movers.length
+          j = 0
+          while j < movers[i].length
+            location = movers[i][j]
+            results_msg += "====================================================================\n"
+            results_msg += "#{location.company_name}\n"
+            results_msg += "\tContact: #{location.contact_name}\n"
+            results_msg += "\tPhone: #{location.phone}\n"
+            results_msg += "\tAddress: #{location.address}, #{location.city} #{location.state}, #{location.zip}\n"
+            j++
+          i++
+            
+      msg.send results_msg
 
   robot.respond /find movers near (.*)/i, (msg) ->
     @robot.http("http://iron-serpent.herokuapp.com/api/v1/near_location?query=#{msg.match[1].replace(/[\s]/, "-")}")
@@ -28,7 +56,7 @@ module.exports = (robot) ->
         while i < locs.length
           results_msg += "#{locs[i].company.company_name}: #{locs[i].company.profile_url}\r\n"
           i++
-        
+
       msg.send results_msg
 
 
