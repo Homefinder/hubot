@@ -25,7 +25,7 @@ module.exports = (robot) ->
     @robot.http("http://iron-serpent.herokuapp.com/api/v1/moving_companies/search?search=#{msg.match[1]}")
     .get() (err, res, body) ->
       movers = JSON.parse(body)
-      results_msg = "Here's what I found #{msg.match[1]}...\r\n"
+      results_msg = "Here's what I found for '#{msg.match[1]}'...\r\n"
       if movers.length <= 0
         results_msg = "I couldn't match any movers to '#{msg.match[1]}'"
       else
