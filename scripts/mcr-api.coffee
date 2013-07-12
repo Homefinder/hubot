@@ -34,11 +34,15 @@ module.exports = (robot) ->
           j = 0
           while j < movers[i].length
             location = movers[i][j]
-            results_msg += "====================================================================\n"
+            results_msg += "==================================\n"
             results_msg += "#{location.company_name}\n"
+            results_msg += "#{location.profile_url}\n"
             results_msg += "\tContact: #{location.contact_name}\n"
             results_msg += "\tPhone: #{location.phone}\n"
-            results_msg += "\tAddress: #{location.address}, #{location.city} #{location.state}, #{location.zip}\n"
+            results_msg += "\tAddress: #{location.address}, #{location.city}, #{location.state} #{location.zip}\n"
+            results_msg += "\tVan Line (agent): #{location.agent}\n"
+            results_msg += "\tUSDOT: #{location.usdot} -- #{location.usdot_link}\n"
+            results_msg += "\tUSDOT: #{location.international_license} -- #{location.international_link}\n"
             j++
           i++
             
