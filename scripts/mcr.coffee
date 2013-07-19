@@ -54,6 +54,11 @@ module.exports = (robot) ->
       msg.send "All of the answers you seek are here...\r\n#{licenses[msg.match[2]]}"
     else
       msg.send "I don't know anything about that one, try the yellow pages."
+  robot.respond /MCR urls/i, (msg) ->
+    msg.send "Production: http://www.movingcompanyreviews.com \n"+
+      "Staging: http://movingcompanyreviews-stage.herokuapp.com \n" +
+      "RFQ: http://mcr-rfq.herokuapp.com"
+      
   # robot.hear /facepalm/i, (msg) ->
   #   msg.send "http://th06.deviantart.net/fs24/200H/i/2008/022/f/1/facepalm_gif_by_thatweirdo7.jpg"
   # robot.hear /hammer/i, (msg) ->
