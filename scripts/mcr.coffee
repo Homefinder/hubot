@@ -8,6 +8,7 @@
 #   hubot <beer> tapped on the (left|right) - sets the tap's brew
 #   hubot empty (left|right) tap - empties the tap
 #   hubot what is on tap - hubot shows what beers are on tap
+#   hubot MCR urls - list the URLs for different MCR environments
 #
 # Author:
 #   bhankus
