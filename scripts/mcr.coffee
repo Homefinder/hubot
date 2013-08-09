@@ -59,7 +59,7 @@ module.exports = (robot) ->
     msg.send "Production: http://www.movingcompanyreviews.com \n"+
       "Staging: http://movingcompanyreviews-stage.herokuapp.com \n" +
       "RFQ: http://mcr-rfq.herokuapp.com"
-  rbot.hear /nothing to see here/i, (msg) ->
+  robot.hear /nothing to see here/i, (msg) ->
     msg.send "http://i.minus.com/imswkJCIVORfd.gif"
 
   # robot.hear /facepalm/i, (msg) ->
