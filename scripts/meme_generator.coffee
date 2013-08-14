@@ -118,6 +118,11 @@ module.exports = (robot) ->
         regex: /(shut up and) (.*)/i,
         generatorID: 1120493,
         imageID: 4802907
+      },
+      {
+        regex: /(brace yourselves) (.*)/i,
+        generatorID: 121854,
+        imageID: 1611300
       }
     ]
 
