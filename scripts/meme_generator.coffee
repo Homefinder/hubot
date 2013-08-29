@@ -133,11 +133,6 @@ module.exports = (robot) ->
         regex: /(f\*\*\* it) (.*)/i,
         generatorID: 674355,
         imageID: 3239759
-      },
-      {
-        regex: /(fwp) (.*)/i,
-        generatorID: 571646,
-        imageID: 2837692
       }
     ]
 
@@ -155,6 +150,10 @@ module.exports = (robot) ->
 
   robot.respond /k(?:ha|ah)nify (.*)/i, (msg) ->
     memeGenerator msg, 6443, 1123022, "", khanify(msg.match[1]), (url) ->
+      msg.send url
+
+  robot.respond /fwp (.*)/i, (msg) ->
+    memeGenerator msg, 571646, 2837692, "", msg.match[1], (url) ->
       msg.send url
 
   robot.respond /(IF .*), ((ARE|CAN|DO|DOES|HOW|IS|MAY|MIGHT|SHOULD|THEN|WHAT|WHEN|WHERE|WHICH|WHO|WHY|WILL|WON\'T|WOULD)[ \'N].*)/i, (msg) ->
