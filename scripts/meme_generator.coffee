@@ -133,6 +133,11 @@ module.exports = (robot) ->
         regex: /(f\*\*\* it) (.*)/i,
         generatorID: 674355,
         imageID: 3239759
+      },
+      {
+        regex: /(fwp) (.*)/i,
+        generatorID: 571646,
+        imageID: 2837692
       }
     ]
 
