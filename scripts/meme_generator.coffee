@@ -133,7 +133,13 @@ module.exports = (robot) ->
         regex: /(f\*\*\* it) (.*)/i,
         generatorID: 674355,
         imageID: 3239759
+      },
+      {
+        regex: /(You know what really grinds my gears?) (.*)/i
+        generatorID: 1958,
+        imageID: 233949
       }
+      
     ]
 
   for meme in robot.brain.data.memes
