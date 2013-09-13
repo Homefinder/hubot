@@ -61,6 +61,9 @@ module.exports = (robot) ->
       "RFQ: http://mcr-rfq.herokuapp.com"
   robot.hear /nothing to see here/i, (msg) ->
     msg.send "http://i.minus.com/imswkJCIVORfd.gif"
+  
+  rbot.hear "i can't", (msg) ->
+    msg.send "http://reactiongifs.com/?p=8151"
 
   # robot.hear /facepalm/i, (msg) ->
   #   msg.send "http://th06.deviantart.net/fs24/200H/i/2008/022/f/1/facepalm_gif_by_thatweirdo7.jpg"
