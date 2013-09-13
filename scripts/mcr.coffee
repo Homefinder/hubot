@@ -64,7 +64,7 @@ module.exports = (robot) ->
     msg.send "http://i.minus.com/imswkJCIVORfd.gif"
   
   robot.hear "i can't", (msg) ->
-    msg.send "http://reactiongifs.com/?p=8151"
+    msg.send "http://www.reactiongifs.com/wp-content/uploads/2013/03/cant.gif"
 
   # robot.hear /facepalm/i, (msg) ->
   #   msg.send "http://th06.deviantart.net/fs24/200H/i/2008/022/f/1/facepalm_gif_by_thatweirdo7.jpg"
