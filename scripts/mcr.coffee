@@ -63,7 +63,7 @@ module.exports = (robot) ->
   robot.hear /nothing to see here/i, (msg) ->
     msg.send "http://i.minus.com/imswkJCIVORfd.gif"
   
-  rbot.hear "i can't", (msg) ->
+  robot.hear "i can't", (msg) ->
     msg.send "http://reactiongifs.com/?p=8151"
 
   # robot.hear /facepalm/i, (msg) ->
