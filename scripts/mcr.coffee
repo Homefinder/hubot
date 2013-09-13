@@ -17,8 +17,9 @@ class Mcr
 
   constructor: (@robot) ->
     @cache = {}
-    if @robot.brain.data.taps
-      @cache = @robot.brain.data.taps
+    @robot.brain.on 'loaded', =>
+      if @robot.brain.data.taps
+        @cache = @robot.brain.data.taps
     
   set_tap: (tap_side, beer) ->
     @cache[tap_side] = beer
