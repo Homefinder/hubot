@@ -66,7 +66,7 @@ module.exports = (robot) ->
   robot.hear "i can't", (msg) ->
     msg.send "http://www.reactiongifs.com/wp-content/uploads/2013/03/cant.gif"
 
-  robot.hear /done/i  , (msg) ->
+  robot.hear "done"  , (msg) ->
     msg.send "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif"
 
 
