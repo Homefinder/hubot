@@ -66,12 +66,9 @@ module.exports = (robot) ->
   robot.hear "i can't", (msg) ->
     msg.send "http://www.reactiongifs.com/wp-content/uploads/2013/03/cant.gif"
 
-  # robot.hear /facepalm/i, (msg) ->
-  #   msg.send "http://th06.deviantart.net/fs24/200H/i/2008/022/f/1/facepalm_gif_by_thatweirdo7.jpg"
-  # robot.hear /hammer/i, (msg) ->
-  #   msg.send "http://divshot.github.io/geo-bootstrap/img/test/mchammer.gif"
-  # robot.hear /alert/i, (msg) ->
-  #   msg.send "http://divshot.github.io/geo-bootstrap/img/test/drudgesiren.gif"
+  robot.hear /done/i  , (msg) ->
+    msg.send "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif"
+
 
 licenses = {
   "AK": "",
