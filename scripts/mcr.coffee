@@ -66,9 +66,18 @@ module.exports = (robot) ->
   robot.hear "i can't", (msg) ->
     msg.send "http://www.reactiongifs.com/wp-content/uploads/2013/03/cant.gif"
 
-  robot.hear /done/i  , (msg) ->
-    msg.send "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif"
+  robot.hear /done|finished|i'm out/i  , (msg) ->
+    msg.send msg.random done_images
 
+done_images = [
+  "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif",
+  "http://25.media.tumblr.com/tumblr_m3rtyerfHZ1qir45xo1_500.gif",
+  "http://0.media.collegehumor.cvcdn.com/71/59/5af32d4f191a61d96991690dfeacad22-dropmic2.gif",
+  "http://awesomelyluvvie.com/wp-content/uploads/2013/01/DropsMic2.gif",
+  "http://media.giphy.com/media/ZOLcVvXARqWk0/original.gif",
+  "http://media3.giphy.com/media/m4dwPQkkDvnji/original.gif",
+  "http://25.media.tumblr.com/53f2cbe5c4af195219ca471f370602fc/tumblr_mnwu4kjNqq1qjvx17o2_250.gif"
+  ]
 
 licenses = {
   "AK": "",
