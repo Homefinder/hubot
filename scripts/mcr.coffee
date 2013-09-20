@@ -69,6 +69,9 @@ module.exports = (robot) ->
   robot.hear /done|finished|i'm out/i  , (msg) ->
     msg.send msg.random done_images
 
+  robot.hear /taco/i  , (msg) ->
+    msg.send msg.random taco_images
+
 done_images = [
   "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif",
   "http://25.media.tumblr.com/tumblr_m3rtyerfHZ1qir45xo1_500.gif",
@@ -77,6 +80,11 @@ done_images = [
   "http://media.giphy.com/media/ZOLcVvXARqWk0/original.gif",
   "http://media3.giphy.com/media/m4dwPQkkDvnji/original.gif",
   "http://25.media.tumblr.com/53f2cbe5c4af195219ca471f370602fc/tumblr_mnwu4kjNqq1qjvx17o2_250.gif"
+  ]
+  
+taco_images = [
+  "http://awesomegifs.com/wp-content/uploads/psycho-potter-taco-fling.gif",
+  "http://gifrific.com/wp-content/uploads/2013/01/Shaq-Eating-Tacos-Taco-Bell-Commercial.gif"
   ]
 
 licenses = {
