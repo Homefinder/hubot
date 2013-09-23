@@ -71,6 +71,9 @@ module.exports = (robot) ->
 
   robot.respond /taco/i  , (msg) ->
     msg.send msg.random taco_images
+    
+  robot.respond /what would tom smykowski think?/i, (msg) ->
+    msg.send "http://i.qkme.me/3sgisk.jpg"
 
 done_images = [
   "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif",
