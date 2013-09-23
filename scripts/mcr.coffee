@@ -66,10 +66,10 @@ module.exports = (robot) ->
   robot.hear "i can't", (msg) ->
     msg.send "http://www.reactiongifs.com/wp-content/uploads/2013/03/cant.gif"
 
-  robot.hear /done|finished|i'm out/i  , (msg) ->
+  robot.respond /done|finished|i'm out|mic drop/i  , (msg) ->
     msg.send msg.random done_images
 
-  robot.hear /taco/i  , (msg) ->
+  robot.respond /taco/i  , (msg) ->
     msg.send msg.random taco_images
 
 done_images = [
