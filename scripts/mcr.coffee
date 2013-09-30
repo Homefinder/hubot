@@ -57,13 +57,14 @@ module.exports = (robot) ->
     else
       msg.send "I don't know anything about that one, try the yellow pages."
       
-  robot.respond /pizzaflip/i, (msg) ->
+  robot.hear "pizzaflip", (msg) ->
     "http://gifrific.com/wp-content/uploads/2012/10/Walter-White-Throws-Pizza-on-Roof-Breaking-Bad.gif"
     
   robot.respond /MCR urls/i, (msg) ->
     msg.send "Production: http://www.movingcompanyreviews.com \n"+
       "Staging: http://movingcompanyreviews-stage.herokuapp.com \n" +
       "RFQ: http://mcr-rfq.herokuapp.com"
+
   robot.hear /nothing to see here/i, (msg) ->
     msg.send "http://i.minus.com/imswkJCIVORfd.gif"
   
