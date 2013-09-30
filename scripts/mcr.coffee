@@ -58,7 +58,7 @@ module.exports = (robot) ->
       msg.send "I don't know anything about that one, try the yellow pages."
       
   robot.hear "pizzaflip", (msg) ->
-    "http://gifrific.com/wp-content/uploads/2012/10/Walter-White-Throws-Pizza-on-Roof-Breaking-Bad.gif"
+    msg.send "http://gifrific.com/wp-content/uploads/2012/10/Walter-White-Throws-Pizza-on-Roof-Breaking-Bad.gif"
     
   robot.respond /MCR urls/i, (msg) ->
     msg.send "Production: http://www.movingcompanyreviews.com \n"+
