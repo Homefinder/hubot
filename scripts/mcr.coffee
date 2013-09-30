@@ -56,6 +56,10 @@ module.exports = (robot) ->
       msg.send "All of the answers you seek are here...\r\n#{licenses[msg.match[2]]}"
     else
       msg.send "I don't know anything about that one, try the yellow pages."
+      
+  robot.respond /pizzaflip/i, (msg) ->
+    "http://gifrific.com/wp-content/uploads/2012/10/Walter-White-Throws-Pizza-on-Roof-Breaking-Bad.gif"
+    
   robot.respond /MCR urls/i, (msg) ->
     msg.send "Production: http://www.movingcompanyreviews.com \n"+
       "Staging: http://movingcompanyreviews-stage.herokuapp.com \n" +
