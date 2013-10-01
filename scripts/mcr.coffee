@@ -60,6 +60,9 @@ module.exports = (robot) ->
   robot.hear "pizzaflip", (msg) ->
     msg.send "http://gifrific.com/wp-content/uploads/2012/10/Walter-White-Throws-Pizza-on-Roof-Breaking-Bad.gif"
     
+  robot.hear /thumbs up/i, (msg) ->
+    msg.send "http://blogdailyherald.com/wp-content/uploads/2013/05/3879-animated_gif-chuck_norris-dodgeball-thumbs_up.gif"
+    
   robot.respond /MCR urls/i, (msg) ->
     msg.send "Production: http://www.movingcompanyreviews.com \n"+
       "Staging: http://movingcompanyreviews-stage.herokuapp.com \n" +
