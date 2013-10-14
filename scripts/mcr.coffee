@@ -58,7 +58,7 @@ module.exports = (robot) ->
       msg.send "I don't know anything about that one, try the yellow pages."
       
   robot.hear "pizzaflip", (msg) ->
-    msg.send "http://gifrific.com/wp-content/uploads/2012/10/Walter-White-Throws-Pizza-on-Roof-Breaking-Bad.gif"
+    msg.send "http://metrouk2.files.wordpress.com/2013/06/breaking-bad-pizza.gif"
     
   robot.hear /thumbs up/i, (msg) ->
     msg.send "http://blogdailyherald.com/wp-content/uploads/2013/05/3879-animated_gif-chuck_norris-dodgeball-thumbs_up.gif"
