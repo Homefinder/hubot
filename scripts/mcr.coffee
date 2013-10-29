@@ -97,8 +97,7 @@ done_images = [
   
 taco_images = [
   "http://awesomegifs.com/wp-content/uploads/psycho-potter-taco-fling.gif",
-  "http://gifrific.com/wp-content/uploads/2013/01/Shaq-Eating-Tacos-Taco-Bell-Commercial.gif",
-  "http://img4.joyreactor.com/pics/comment/comics-nedroid-taco-389544.gif"
+  "http://gifrific.com/wp-content/uploads/2013/01/Shaq-Eating-Tacos-Taco-Bell-Commercial.gif"
   ]
 
 licenses = {
