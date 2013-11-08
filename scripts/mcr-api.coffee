@@ -5,7 +5,7 @@
 #   hubot review report - Shows total MCR published reviews and happy moves
 #   hubot show mover <mover name> - Returns all moving company locations matching <mover name>
 #   hubot find movers near <query> - Returns moving companies near the given location (zip code, city/state, address)
-#   hubot give me traffic stats - Returns visits and pagesview stats from Google Analytics for http://www.movingcompanyreviews.com for yesterday and month-to-date
+#   hubot MCR traffic stats - Returns visits and pagesview stats from Google Analytics for http://www.movingcompanyreviews.com for yesterday and month-to-date
 #   
 
 GA = require('googleanalytics')
@@ -64,7 +64,7 @@ module.exports = (robot) ->
       msg.send results_msg
 
 
-  robot.hear /give me traffic stats/i, (msg) ->
+  robot.hear /MCR traffic stats/i, (msg) ->
     config = { "user": "dgehrett@homefinder.com", "password": "Charl1e0616" }
   
     ga = new GA.GA(config);
