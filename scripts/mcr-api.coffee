@@ -64,7 +64,7 @@ module.exports = (robot) ->
       msg.send results_msg
 
 
-  robot.hear /MCR traffic stats/i, (msg) ->
+  robot.respond /MCR traffic stats/i, (msg) ->
     config = { "user": "dgehrett@homefinder.com", "password": "Charl1e0616" }
   
     ga = new GA.GA(config);
