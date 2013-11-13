@@ -139,7 +139,7 @@ licenses = {
   "OH": "http://www.puco.ohio.gov/apps/hhglist/index.cfm",
   "OK": "ftp://ftp.occeweb.com/TR_DATA/MCApplicantList/Household_Goods_MC.pdf  http://www.occeweb.com/tr/TRLists.htm",
   "OR": "http://www.oregon.gov/ODOT/MCT/Pages/MOVERS.aspx#Authorized_Movers",
-  "PE": "http://www.puc.state.pa.us/transport/motor/pdf/HHG_Operators.pdf",
+  "PA": "http://www.puc.state.pa.us/transport/motor/pdf/HHG_Operators.pdf",
   "RI": "http://www.ripuc.org/utilityinfo/motorcarriers/Moving%20Companies%20Feb.%202013.pdf",
   "SC": "http://dms.psc.sc.gov/dockets/",
   "SD": "",
