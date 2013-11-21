@@ -85,6 +85,9 @@ module.exports = (robot) ->
     
   robot.respond /what would tom smykowski think?/i, (msg) ->
     msg.send "http://i.qkme.me/3sgisk.jpg"
+    
+  robot.respond /we only bust our a$$/i, (msg) ->
+    msg.send "http://www.bluemoundexpress.com/files/Donkey3.gif"
 
 done_images = [
   "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif",
