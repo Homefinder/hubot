@@ -92,6 +92,9 @@ module.exports = (robot) ->
   robot.hear /beavis|butthead|rock on/i, (msg) ->
     msg.send "http://static2.wikia.nocookie.net/__cb20100516054256/uncyclopedia/images/a/a4/Beavis_%26_Butthead_-_Head_Banging.gif"
 
+  robot.respond /smokebomb/i, (msg) ->
+    msg.send "http://24.media.tumblr.com/tumblr_lhfavv2Iuo1qgcvieo1_400.gif"
+    
 done_images = [
   "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif",
   "http://25.media.tumblr.com/tumblr_m3rtyerfHZ1qir45xo1_500.gif",
