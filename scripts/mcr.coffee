@@ -97,7 +97,7 @@ module.exports = (robot) ->
     msg.send "http://24.media.tumblr.com/tumblr_lhfavv2Iuo1qgcvieo1_400.gif"
 
   robot.hear /GH\d*/i, (msg) ->
-    issueNum = msg.match[0].replace /GH/, ''
+    issueNum = msg.match[0].replace /GH/i, ''
     msg.send "Were you looking for this?\r\nhttps://github.com/Homefinder/movingcompanyreviews/issues/#{issueNum}"
 
 done_images = [
