@@ -9,6 +9,7 @@
 #   hubot empty (left|right) tap - empties the tap
 #   hubot what is on tap - hubot shows what beers are on tap
 #   hubot MCR urls - list the URLs for different MCR environments
+#   GH<number> - return a link to the MCR github issue number
 #
 # Author:
 #   bhankus
@@ -20,11 +21,11 @@ class Mcr
     @robot.brain.on 'loaded', =>
       if @robot.brain.data.taps
         @cache = @robot.brain.data.taps
-    
+
   set_tap: (tap_side, beer) ->
     @cache[tap_side] = beer
     @robot.brain.data.taps = @cache
-    
+
   get_tap: ->
     response = ""
     if !@cache || (!@cache['left'] && !@cache['right'])
@@ -36,7 +37,7 @@ class Mcr
         response += "\r\n" + @cache['right'] + " is pouring from the RIGHT tap."
     response
 
-tap_responses = ["Awesome, I LOVE BEER!!!", "I'm so thirsty.", "Let's go grab a beer right now!", 
+tap_responses = ["Awesome, I LOVE BEER!!!", "I'm so thirsty.", "Let's go grab a beer right now!",
                 "I can't wait until 4pm.", "Cheers! Salut! Prost! Sláinte! Salud! Na zdrowie!"]
 
 module.exports = (robot) ->
@@ -56,13 +57,13 @@ module.exports = (robot) ->
       msg.send "All of the answers you seek are here...\r\n#{licenses[msg.match[2]]}"
     else
       msg.send "I don't know anything about that one, try the yellow pages."
-      
+
   robot.hear "pizzaflip", (msg) ->
     msg.send "http://metrouk2.files.wordpress.com/2013/06/breaking-bad-pizza.gif"
-    
+
   robot.hear /thumbs up/i, (msg) ->
     msg.send "http://blogdailyherald.com/wp-content/uploads/2013/05/3879-animated_gif-chuck_norris-dodgeball-thumbs_up.gif"
-    
+
   robot.respond /MCR urls/i, (msg) ->
     msg.send "Production: http://www.movingcompanyreviews.com \n"+
       "Staging: http://movingcompanyreviews-stage.herokuapp.com \n" +
@@ -70,7 +71,7 @@ module.exports = (robot) ->
 
   robot.hear /nothing to see here/i, (msg) ->
     msg.send "http://i.minus.com/imswkJCIVORfd.gif"
-  
+
   robot.hear "i can't", (msg) ->
     msg.send "http://www.reactiongifs.com/wp-content/uploads/2013/03/cant.gif"
 
@@ -82,10 +83,10 @@ module.exports = (robot) ->
 
   robot.respond /taco/i  , (msg) ->
     msg.send msg.random taco_images
-    
+
   robot.respond /what would tom smykowski think?/i, (msg) ->
     msg.send "http://i.qkme.me/3sgisk.jpg"
-    
+
   robot.respond /we only bust our butt/i, (msg) ->
     msg.send "http://www.bluemoundexpress.com/files/Donkey3.gif"
 
@@ -94,7 +95,12 @@ module.exports = (robot) ->
 
   robot.respond /smokebomb/i, (msg) ->
     msg.send "http://24.media.tumblr.com/tumblr_lhfavv2Iuo1qgcvieo1_400.gif"
-    
+
+  robot.hear /GH\d*/i, (msg) ->
+    issueNum = msg.match[0].replace /GH/i, ''
+    if issueNum
+      msg.send "Were you looking for this?\r\nhttps://github.com/Homefinder/movingcompanyreviews/issues/#{issueNum}"
+
 done_images = [
   "http://25.media.tumblr.com/tumblr_me3vm1DRDm1qhszhwo1_500.gif",
   "http://25.media.tumblr.com/tumblr_m3rtyerfHZ1qir45xo1_500.gif",
@@ -103,7 +109,7 @@ done_images = [
   "http://media3.giphy.com/media/m4dwPQkkDvnji/original.gif",
   "http://25.media.tumblr.com/53f2cbe5c4af195219ca471f370602fc/tumblr_mnwu4kjNqq1qjvx17o2_250.gif"
   ]
-  
+
 taco_images = [
   "http://awesomegifs.com/wp-content/uploads/psycho-potter-taco-fling.gif",
   "http://gifrific.com/wp-content/uploads/2013/01/Shaq-Eating-Tacos-Taco-Bell-Commercial.gif"
