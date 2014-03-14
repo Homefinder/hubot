@@ -25,22 +25,7 @@ module.exports = (robot) ->
           rev_resp = JSON.parse(body)
           msg.send "Funnel Report\n"+
           "-------------\n"+
-          "Yesterday:        Moves: #{rev_resp.values[1][1]}\n"+
-          "Today:            Moves: #{rev_resp.values[0][1]}"
-
-#        config = { "user": "dgehrett@homefinder.com", "password": "Charl1e0616" }
-#        ga = new GA.GA(config);
-#        ga.login (err, token) ->
-#          yesterday = Date.yesterday().toYMD("-")
-#          today = Date.today().toYMD("-")
-#          options = {
-#              'ids': 'ga:67098210',
-#              'start-date': yesterday,
-#              'end-date': yesterday,
-#              'metrics': 'ga:visits',
-#          }
-          # [{"metrics":[{"ga:visits":478,"ga:pageviews":688}],"dimensions":[{}]}]
-#          ga.get(options, (err, entries) ->
-#            visits = entries[0]["metrics"][0]["ga:visits"]
-#            msg.send "We got #{visits} visits on #{yesterday} \n"    
-#          )
+          "Yesterday:        Moves:                         #{rev_resp.values[1][1]}\n"+
+          "Yesterday:        Moves Opted in for Review SMS: #{rev_resp.values[1][2]}\n"+
+          "Today:            Moves:                         #{rev_resp.values[0][1]}\n"+
+          "Today:            Moves Opted in for Review SMS: #{rev_resp.values[0][2]}\n"
