@@ -30,7 +30,8 @@
     "date-utils": "~1.2.15",
     "hubot-caffeine": "~0.1.0",
     "hubot-calculator": "~0.2.0",
-    "hubot-circleci": "~0.1.0"
+    "hubot-circleci": "~0.1.0",
+    "hubot-simpsons": "0.0.2"
   },
   "engines": {
     "node": ">= 0.8.x",
